@@ -17,26 +17,27 @@ On macOS, install `selenium-server-standalone@2.45` and `chromedriver` using
 `npm i`
 
 ## Run
-`npm start`
+`USERNAME=xa123456 PASSWORD=password npm start`
 
 ## Console output
 ```
-$ npm start
+$ USERNAME=xa123456 PASSWORD=password npm start
 
-> wip-efforts@1.0.0 start /Users/pr375903/Development/labs/wip-efforts
+> effortless@1.0.0 start /Users/pr375903/Development/labs/effortless
 > npm t
 
 
-> wip-efforts@1.0.0 test /Users/pr375903/Development/labs/wip-efforts
+> effortless@1.0.0 test /Users/pr375903/Development/labs/effortless
 > nightwatch tests
 
 
-[Demo] Test Suite
-=====================
+[Efforts] Test Suite
+========================
 
-Running:  demoTest
- ✔ Expected element <body> to be present
- ✔ Expected element <body> to be visible
+Running:  efforts
+ ✔ Element <#userNameInput> was visible after 52 milliseconds.
+ ✔ Element <#Find_an_App> was visible after 564 milliseconds.
+ ✔ Element <#findAppTxtId> was visible after 45 milliseconds.
 
-OK. 2 assertions passed. (3.413s)
+OK. 3 assertions passed. (10.332s)
 ```
