@@ -13,9 +13,14 @@ this.efforts = function (browser) {
   browser.waitForElementVisible('#findAppTxtId', 5000);
   browser.setValue('#findAppTxtId', 'myefforts');
   browser.click('#btnSearch');
-  // browser.waitForElementVisible('input[id=0_0_4_0]', 5000);
-  // browser.waitForElementVisible('input[title="Efforts for Coding and Unit Testing on Monday"]', 5000);
-  // browser.click('#submitdata');
+  browser.pause(10000);
+  browser.frame('divMainmyWiproPortalViewFrame');
+  browser.setValue('input[id="0_0_4_0"]', '8');
+  // browser.setValue('input[id="1_0_4_0"]', '8');
+  // browser.setValue('input[id="2_0_4_0"]', '8');
+  // browser.setValue('input[id="3_0_4_0"]', '8');
+  // browser.setValue('input[id="4_0_4_0"]', '8');
+  browser.click('#submitdata');
 
   // observe: for humans
   browser.pause(3000);
