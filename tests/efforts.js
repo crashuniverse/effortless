@@ -5,6 +5,12 @@ this.efforts = function (browser) {
   var LONG_INTERVAL = 10000;
   var REALLY_LONG_INTERVAL = 20000;
 
+  // tip: try to find the date object after 5 am to avoid doing things
+  // too soon; Monday = 1
+  var yesterday = new Date().getDay() - 1;
+  var allowedDays = [1, 2, 3, 4, 5];
+  var isAnAllowedDay = allowedDays.indexOf(yesterday) > -1;
+
   browser.url('http://mywipro.wipro.com');
   browser.deleteCookies();
   browser.click('.idp');
@@ -22,12 +28,11 @@ this.efforts = function (browser) {
   browser.click('#tmsMobileId');
   browser.waitForElementVisible('#mainContent', LONG_INTERVAL);
   browser.pause(LONG_INTERVAL);
-  browser.setValue('input[id="0_0_4_0"]', '8');
-  // browser.setValue('input[id="1_0_4_0"]', '8');
-  // browser.setValue('input[id="2_0_4_0"]', '8');
-  // browser.setValue('input[id="3_0_4_0"]', '8');
-  // browser.setValue('input[id="4_0_4_0"]', '8');
-  browser.click('#submitdata');
+
+  if (isAnAllowedDay) {
+    browser.setValue('input[id="' + (yesterday - 1) + '_0_4_0"]', '8');
+    browser.click('#submitdata');
+  }
 
   // observe: for humans
   browser.pause(SHORT_INTERVAL);
