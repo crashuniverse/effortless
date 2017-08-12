@@ -17,6 +17,7 @@ On macOS, install `selenium-server-standalone@2.45` and `chromedriver` using
 `npm i`
 
 ## Run
+`brew services start selenium-server-standalone@2.45`  
 `USERNAME=xa123456 PASSWORD=password npm start`
 
 ## Console output
