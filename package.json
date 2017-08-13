@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "mocha": "^3.4.2",
-    "nightwatch": "^0.9.16"
+    "nightwatch": "^0.9.16",
+    "selenium-server-standalone-jar": "^3.4.0"
   }
 }
