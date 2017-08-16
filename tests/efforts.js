@@ -11,7 +11,7 @@ this.efforts = function (browser) {
   var allowedDays = [1, 2, 3, 4, 5];
   var isAnAllowedDay = allowedDays.indexOf(yesterday) > -1;
 
-  browser.url('http://mywipro.wipro.com');
+  browser.url('https://mywipro.wipro.com');
   browser.deleteCookies();
   browser.click('.idp');
   browser.waitForElementVisible('#userNameInput', SHORT_INTERVAL);
