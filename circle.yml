@@ -1,7 +1,5 @@
 dependencies:
   pre:
-    # Install xvfb display server
-    - sudo apt-get install xvfb -y
     # Install latest chrome browser
     # Source: https://gist.github.com/Arjeno/8564d9643f16d072a85b9c9b5a9f7de0
     - curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
