@@ -1,15 +1,17 @@
-this.efforts = function (browser) {
-  var username = process.env.USERNAME;
-  var password = process.env.PASSWORD;
-  var SHORT_INTERVAL = 5000;
-  var LONG_INTERVAL = 10000;
-  var REALLY_LONG_INTERVAL = 20000;
+this.efforts = (browser) => {
+  const username = process.env.USERNAME;
+  const password = process.env.PASSWORD;
+  const ci = process.env.CI;
+
+  const SHORT_INTERVAL = 5000;
+  const LONG_INTERVAL = 10000;
+  const REALLY_LONG_INTERVAL = 20000;
 
   // tip: try to find the date object after 5 am to avoid doing things
   // too soon; Monday = 1
-  var yesterday = new Date().getDay() - 1;
-  var allowedDays = [1, 2, 3, 4, 5];
-  var isAnAllowedDay = allowedDays.indexOf(yesterday) > -1;
+  const yesterday = new Date().getDay() - 1;
+  const allowedDays = [1, 2, 3, 4, 5];
+  const isAnAllowedDay = allowedDays.indexOf(yesterday) > -1;
 
   browser.url('https://mywipro.wipro.com');
   browser.deleteCookies();
@@ -29,8 +31,10 @@ this.efforts = function (browser) {
     browser.click('#submitdata');
   }
 
-  // observe: for humans
-  browser.pause(SHORT_INTERVAL);
+  if (!ci) {
+    // observe: for humans
+    browser.pause(SHORT_INTERVAL);
+  }
 
   // end the session
   browser.end();
