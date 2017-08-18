@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm t",
-    "test": "xvfb-run -s '-screen 0 1280x1024x16' nightwatch tests",
-    "test:local": "nightwatch tests"
+    "test": "nightwatch tests"
   },
   "keywords": [],
   "author": "",

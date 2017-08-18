@@ -34,9 +34,7 @@ Starting selenium server... started - PID:  23355
 Running:  efforts
  ✔ Element <#username> was visible after 124 milliseconds.
  ✔ Element <.appstore> was visible after 2831 milliseconds.
- ✔ Element <.mytime> was visible after 1216 milliseconds.
- ✔ Element <#mobileId> was visible after 3249 milliseconds.
  ✔ Element <#mainContent> was visible after 2172 milliseconds.
 
-OK. 5 assertions passed. (31.886s)
+OK. 3 assertions passed. (31.886s)
 ```

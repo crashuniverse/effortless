@@ -13,19 +13,14 @@ this.efforts = function (browser) {
 
   browser.url('https://mywipro.wipro.com');
   browser.deleteCookies();
+  browser.maximizeWindow();
   browser.click('.idp');
   browser.waitForElementVisible('#userNameInput', SHORT_INTERVAL);
   browser.setValue('#userNameInput', 'wipro\\' + username);
   browser.setValue('#passwordInput', password);
   browser.click('#submitButton');
   browser.waitForElementVisible('.appstore_btn', SHORT_INTERVAL);
-  browser.click('.appstore_btn');
-  browser.waitForElementVisible('.MYTIME', SHORT_INTERVAL);
-  browser.click('.MYTIME');
-  browser.maximizeWindow();
-  browser.frame('divMainmyWiproPortalViewFrame');
-  browser.waitForElementVisible('#tmsMobileId', REALLY_LONG_INTERVAL);
-  browser.click('#tmsMobileId');
+  browser.url('https://wscloudapp4.wipro.com/mytimeeffort/#/Home');
   browser.waitForElementVisible('#mainContent', LONG_INTERVAL);
   browser.pause(LONG_INTERVAL);
 
