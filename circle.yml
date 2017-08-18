@@ -10,6 +10,6 @@ dependencies:
     - rm google-chrome.deb
 test:
   override:
-    - npm test:ci
-      environment:
-        DISPLAY=:99
+    - npm test:ci:
+        environment:
+          DISPLAY=:99
