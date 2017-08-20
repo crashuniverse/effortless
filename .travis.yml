@@ -5,6 +5,8 @@ dist: trusty
 branches:
   only:
     - master
+addons:
+  chrome: stable
 install:
   - npm install
 script:
