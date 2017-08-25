@@ -6,12 +6,13 @@ branches:
   only:
     - master
 addons:
+  apt:
+    packages:
+      - xvfb
   chrome: stable
 install:
   - npm install
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start -ac -screen 0 1280x1024x16"
-  - sleep 3 # give xvfb some time to start
+  - export DISPLAY=':99.0'
 script:
-  - npm test
+  - xvfb npm test
