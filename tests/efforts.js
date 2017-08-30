@@ -27,7 +27,9 @@ this.efforts = (browser) => {
   browser.pause(LONG_INTERVAL);
 
   if (isAnAllowedDay) {
-    browser.setValue('input[id="' + (yesterday - 1) + '_0_4_0"]', '8');
+    const nodeSelector = `input[id="${yesterday - 1}_0_4_0"]`;
+    browser.waitForElementVisible(nodeSelector, SHORT_INTERVAL);
+    browser.setValue(nodeSelector, '8');
     browser.click('#submitdata');
   }
 
