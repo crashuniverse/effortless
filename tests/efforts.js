@@ -1,7 +1,6 @@
 this.efforts = (browser) => {
   const username = process.env.USERNAME;
   const password = process.env.PASSWORD;
-  const ci = process.env.CI;
 
   const SHORT_INTERVAL = 5000;
   const LONG_INTERVAL = 10000;
@@ -31,10 +30,6 @@ this.efforts = (browser) => {
     browser.waitForElementVisible(nodeSelector, SHORT_INTERVAL);
     browser.setValue(nodeSelector, '8');
     browser.click('#submitdata');
-  }
-
-  if (!ci) {
-    // observe: for humans
     browser.pause(SHORT_INTERVAL);
   }
 
