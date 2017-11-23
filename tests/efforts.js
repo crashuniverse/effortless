@@ -1,6 +1,7 @@
 this.efforts = (browser) => {
   const username = process.env.USERNAME;
   const password = process.env.PASSWORD;
+  const project = process.env.PROJECT || '0_0_4_0';
 
   const SHORT_INTERVAL = 5000;
   const LONG_INTERVAL = 10000;
@@ -26,7 +27,8 @@ this.efforts = (browser) => {
   browser.pause(LONG_INTERVAL);
 
   if (isAnAllowedDay) {
-    const nodeSelector = `input[id="${yesterday - 1}_0_4_0"]`;
+    const projectCodeSuffix = project && project.slice(1);
+    const nodeSelector = `input[id="${yesterday - 1}${projectCodeSuffix}"]`;
     browser.waitForElementVisible(nodeSelector, SHORT_INTERVAL);
     browser.setValue(nodeSelector, '8');
     browser.click('#submitdata');

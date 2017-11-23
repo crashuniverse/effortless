@@ -10,7 +10,9 @@ This project makes the entire effort updating process automated. The way it
 works is you provide Travis CI with credentials in form of 2 environment
 variables - `USERNAME` and `PASSWORD` with your actual values for these
 credentials. Travis CI uses these credentials to login on your behalf and fills
-your timesheets.
+your timesheets. Advanced usage involves an optional 3rd env variable `PROJECT`,
+for which the value is `id` of the [project on Monday in DOM](https://developers.google.com/web/tools/chrome-devtools/inspect-styles/edit-dom#inspect-an-element).
+Typical values are `0_0_0_0` & `projectA_0_0_0`.
 
 ## Setup Travis CI for scheduled jobs in 5 steps
 1. Make a free account or login with an existing account at
@@ -24,6 +26,7 @@ in Travis CI:
 ```
 USERNAME: xa123456
 PASSWORD: password
+PROJECT: 0_7_nonproj (optional)
 ```
 5. At 5pm on one of these days, [add a cron job](https://docs.travis-ci.com/user/cron-jobs/#Adding-Cron-Jobs)
 in Travis CI so that it runs a build everyday.
